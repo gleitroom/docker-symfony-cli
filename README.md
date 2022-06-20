@@ -20,21 +20,21 @@ In order to run this container you'll need docker installed.
 
 ### Usage
 
-In order to initialize a new Symfony project, you can use the following command :
+In order to initialize a new Symfony project, you can use the following command (be careful, replace *authorName* and *default@mydomain.fr* by your commiter information):
 
 ```shell
-docker run --rm -v $PWD:/app itroom/docker-symfony-cli:latest new --no-git projectName
+docker run --rm -v $PWD:/app -e GIT_AUTHOR_NAME=authorName -e EMAIL=default@mydomain.fr itroom/docker-symfony-cli:latest symfony new --webapp projectName
 ```
 
 In order to use a different php version, you can use the following command :
 
 ```shell
 # Create project with php 7.4
-docker run --rm -v $PWD:/app itroom/docker-symfony-cli:7.4 new --no-git projectName
+docker run --rm -v $PWD:/app -e GIT_AUTHOR_NAME=authorName -e EMAIL=default@mydomain.fr itroom/docker-symfony-cli:7.4 symfony new --webapp projectName
 # Create project with php 8.0
-docker run --rm -v $PWD:/app itroom/docker-symfony-cli:8.0 new --no-git projectName
+docker run --rm -v $PWD:/app -e GIT_AUTHOR_NAME=authorName -e EMAIL=default@mydomain.fr itroom/docker-symfony-cli:8.0 symfony new --webapp projectName
 # Create project with php 8.1 (same as latest)
-docker run --rm -v $PWD:/app itroom/docker-symfony-cli:8.1 new --no-git projectName
+docker run --rm -v $PWD:/app -e GIT_AUTHOR_NAME=authorName -e EMAIL=default@mydomain.fr itroom/docker-symfony-cli:8.1 symfony new --webapp projectName
 ```
 
 ## Authors
